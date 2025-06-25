@@ -1,4 +1,4 @@
-FROM python:3.10-slim
+FROM python:3.14.0b3-slim
 RUN apt-get update && apt-get upgrade -y && apt-get clean
 WORKDIR /app
 COPY requirements.txt .
