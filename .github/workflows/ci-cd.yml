@@ -42,8 +42,8 @@ jobs:
 
       - name: Snyk scan Docker image Flask
         run: |
-          snyk container test ${{ secrets.DOCKER_USERNAME }}/webapp:latest --severity-threshold=high --fail-on=never
-
+          snyk container test ${{ secrets.DOCKER_USERNAME }}/webapp:latest --severity-threshold=high || true
+        
       - name: Pull Docker MySQL image
         run: |
           docker pull mysql:8.0
